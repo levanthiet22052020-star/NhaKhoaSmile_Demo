@@ -9,7 +9,8 @@
         content="Nha khoa Smile - Hệ thống nha khoa thẩm mỹ quốc tế với 15+ năm kinh nghiệm, 4 chi nhánh tại Cần Thơ, Bạc Liêu, Kiên Giang, Cà Mau">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700;800&display=swap"
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@700;800&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -43,19 +44,52 @@
         </nav>
     </header>
 
-    <section id="home" class="hero-slider">
-        <div class="slider-container">
-            <div class="slide active">
-                <img src="images/bia-web-74640.jpg" alt="Nha Khoa Smile Banner 1">
-            </div>
-            <div class="slide">
-                <img src="images/untitled-1-7958.png" alt="Nha Khoa Smile Banner 2">
-            </div>
-            <div class="slide">
-                <img src="images/bia-web-3-2880.png" alt="Nha Khoa Smile Banner 3">
-            </div>
-            <div class="slide">
-                <img src="images/bia-web-4-2738.png" alt="Nha Khoa Smile Banner 4">
+    <section id="home" class="hero-split">
+        <div class="container">
+            <div class="hero-grid">
+                <div class="hero-text-side reveal">
+                    <span class="hero-badge">NHA KHOA THẨM MỸ QUỐC TẾ</span>
+                    <h1 class="display-1">KIẾN TẠO <br><span class="text-gradient">NỤ CƯỜI</span> <br>ĐẲNG CẤP</h1>
+                    <p class="hero-desc">Trải nghiệm dịch vụ nha khoa chuẩn 5 sao với không gian Luxury và công nghệ
+                        hiện đại bậc nhất Miền Tây.</p>
+                    <div class="hero-actions">
+                        <a href="#booking" class="btn btn-primary btn-lg">ĐẶT LỊCH NGAY</a>
+                        <a href="#services" class="btn btn-outline btn-lg">DỊCH VỤ</a>
+                    </div>
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <span class="stat-num">15+</span>
+                            <span class="stat-lbl">Năm Uy Tín</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-num">40K+</span>
+                            <span class="stat-lbl">Khách Hàng</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-img-side reveal">
+                    <div class="hero-blob-img" id="heroSlider">
+                        <img src="images/bia-web-74640.jpg" alt="Nha Khoa Smile Luxury 1" class="active">
+                        <img src="images/untitled-1-7958.png" alt="Nha Khoa Smile Luxury 2">
+                        <img src="images/bia-web-3-2880.png" alt="Nha Khoa Smile Luxury 3">
+                        <img src="images/bia-web-4-2738.png" alt="Nha Khoa Smile Luxury 4">
+                    </div>
+                    <script>
+                        setInterval(() => {
+                            const slider = document.getElementById('heroSlider');
+                            const images = slider.querySelectorAll('img');
+                            let activeIndex = 0;
+                            images.forEach((img, index) => {
+                                if (img.classList.contains('active')) {
+                                    activeIndex = index;
+                                    img.classList.remove('active');
+                                }
+                            });
+                            let nextIndex = (activeIndex + 1) % images.length;
+                            images[nextIndex].classList.add('active');
+                        }, 4000);
+                    </script>
+                </div>
             </div>
         </div>
     </section>
@@ -115,24 +149,24 @@
                     <img src="images/untitled-5-8628.png" alt="Nha Khoa Smile">
                 </div>
                 <div class="services-center">
-                    <div class="service-item">
+                    <div class="service-item glass-effect">
                         <img src="images/z549769316986837e63836ef2db50a59046bd59f222a24-2617.png" alt="Răng Sứ Thẩm Mỹ">
                         <div class="service-label">Răng Sứ Thẩm Mỹ</div>
                     </div>
-                    <div class="service-item">
+                    <div class="service-item glass-effect">
                         <img src="images/dan-su-1690821120715935924380-6128.png" alt="Dán sứ Veneer">
                         <div class="service-label">Dán sứ Veneer</div>
                     </div>
-                    <div class="service-item">
+                    <div class="service-item glass-effect">
                         <img src="images/dentist-attaching-metal-braces-patient-teeth-1522.jpg" alt="Niềng răng">
                         <div class="service-label">Niềng răng</div>
                     </div>
-                    <div class="service-item">
+                    <div class="service-item glass-effect">
                         <img src="images/33860ed8c3db8f775f8b1aa1a607f264jpg-7100.png" alt="Cấy ghép implant">
                         <div class="service-label">Cấy ghép implant</div>
                     </div>
                 </div>
-                <div class="services-right">
+                <div class="services-right glass-effect">
                     <img src="images/untitled-1-5241.png" alt="Dịch vụ tổng quát">
                     <div class="service-label-right">Dịch vụ tổng quát</div>
                 </div>
@@ -142,35 +176,36 @@
 
     <section id="about" class="about">
         <div class="container">
-            <div class="about-grid">
+            <div class="about-grid asymmetric-grid">
                 <div class="about-content reveal">
-                    <span class="section-badge">Về chúng tôi</span>
-                    <h2>Hệ Thống Nha Khoa Thẩm Mỹ <span class="highlight">Quốc Tế</span></h2>
-                    <p class="about-desc"><strong>Nha khoa Smile - Cười là đẹp</strong> là hệ thống nha khoa uy tín lâu
-                        đời ở khu vực miền Tây Nam Bộ. Hiện đã có 4 chi nhánh tại Cần Thơ, Bạc Liêu, Kiên Giang, Cà Mau.
-                    </p>
+                    <span class="section-badge">Câu chuyện thương hiệu</span>
+                    <h2>Nha Khoa Smile <br><span class="highlight">Đẳng Cấp & Khác Biệt</span></h2>
+                    <p class="about-desc"><strong>Nha khoa Smile</strong> không chỉ là nơi điều trị, mà là chốn kiến tạo
+                        nụ cười hoàn mỹ. Với hơn 15 năm hình thành và phát triển tại miền Tây Nam Bộ, chúng tôi tự hào
+                        mang đến trải nghiệm điều trị nha khoa chuẩn 5 sao.</p>
                     <ul class="about-features">
-                        <li><span class="feature-icon">&#10003;</span><span>Đội ngũ bác sĩ được đào tạo bài bản tại các
-                                trường Y uy tín</span></li>
-                        <li><span class="feature-icon">&#10003;</span><span>Trang thiết bị và công nghệ tiên tiến nhất
-                                hiện nay</span></li>
-                        <li><span class="feature-icon">&#10003;</span><span>Xưởng LAB độc quyền, thiết kế nụ cười riêng
-                                biệt</span></li>
-                        <li><span class="feature-icon">&#10003;</span><span>Chính sách bảo hành lên đến 10 năm</span>
+                        <li>
+                            <img src="images/check-circle-broken-3850.png" alt="Check">
+                            <span>Đội ngũ bác sĩ tu nghiệp Quốc tế</span>
+                        </li>
+                        <li>
+                            <img src="images/check-circle-broken-3850.png" alt="Check">
+                            <span>Công nghệ Smile Design độc quyền</span>
+                        </li>
+                        <li>
+                            <img src="images/check-circle-broken-3850.png" alt="Check">
+                            <span>Bảo hành trọn đời - An tâm tuyệt đối</span>
                         </li>
                     </ul>
-                    <div class="about-stats">
-                        <div class="about-stat"><span class="stat-num">15+</span><span class="stat-text">Năm kinh
-                                nghiệm</span></div>
-                        <div class="about-stat"><span class="stat-num">4</span><span class="stat-text">Chi nhánh</span>
-                        </div>
-                        <div class="about-stat"><span class="stat-num">20K+</span><span class="stat-text">Khách
-                                hàng</span></div>
-                    </div>
+                    <a href="#booking" class="btn btn-primary">Khám phá ngay</a>
                 </div>
-                <div class="about-image">
-                    <div class="image-wrapper">
-                        <img src="images/untitled-3-6054.png" alt="Hệ Thống Nha Khoa Smile">
+                <div class="about-image reveal">
+                    <div class="image-wrapper organic-shape">
+                        <img src="images/untitled-1-5807.png" alt="Đội ngũ Nha Khoa Smile">
+                    </div>
+                    <div class="experience-badge floating-badge">
+                        <span class="exp-number">15+</span>
+                        <span class="exp-text">Năm kinh nghiệm</span>
                     </div>
                 </div>
             </div>
@@ -269,7 +304,9 @@
                             trong giao tiếp."</p>
                     </div>
                     <div class="testimonial-author">
-                        <div class="author-avatar">ĐC</div>
+                        <div class="author-avatar">
+                            <img src="images/duc-cu-5950.png" alt="Anh Đức Cử">
+                        </div>
                         <div class="author-info">
                             <h4>Anh Đức Cử</h4>
                             <span>Bọc 29 răng sứ DDBIO</span>
@@ -283,7 +320,9 @@
                             hạnh phúc hơn."</p>
                     </div>
                     <div class="testimonial-author">
-                        <div class="author-avatar">HH</div>
+                        <div class="author-avatar">
+                            <img src="images/hong-hanh-56320.png" alt="Chị Hồng Hạnh">
+                        </div>
                         <div class="author-info">
                             <h4>Chị Hồng Hạnh</h4>
                             <span>Bọc 19 răng Cercon HT</span>
@@ -297,7 +336,9 @@
                             thật luôn."</p>
                     </div>
                     <div class="testimonial-author">
-                        <div class="author-avatar">KD</div>
+                        <div class="author-avatar">
+                            <img src="images/kha-di-6551.png" alt="Hoa Khôi Khả Di">
+                        </div>
                         <div class="author-info">
                             <h4>Hoa Khôi Khả Di</h4>
                             <span>Răng sứ thẩm mỹ</span>
