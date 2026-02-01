@@ -751,9 +751,99 @@ h6 {
     font-weight: 600;
 }
 
-.author-info span {
-    font-size: 13px;
-    color: var(--text-light);
+/* --- COMPARISON SLIDER STYLES --- */
+.comparison-section {
+    padding: 60px 0;
+}
+
+.comparison-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+}
+
+.img-comp-container {
+    position: relative;
+    height: 400px;
+    /* Fixed height for consistency */
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: var(--shadow-md);
+    cursor: col-resize;
+}
+
+.img-comp-img {
+    position: absolute;
+    width: auto;
+    height: auto;
+    overflow: hidden;
+}
+
+.img-comp-img img {
+    display: block;
+    height: 400px;
+    /* Match container height */
+    width: auto;
+    /* Maintain aspect ratio */
+    object-fit: cover;
+    max-width: none;
+    /* Allow full width scrolling */
+}
+
+/* Grayscale filter REMOVED - using real images */
+.img-comp-overlay {
+    z-index: 2;
+    border-right: 2px solid var(--white);
+    /* White divider */
+}
+
+.img-comp-slider {
+    position: absolute;
+    z-index: 9;
+    cursor: ew-resize;
+    width: 40px;
+    height: 40px;
+    background-color: var(--white);
+    /* White Handle */
+    border-radius: 50%;
+    top: 50%;
+    /* JS handles Left offset, CSS handles Vertical offset */
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.img-comp-slider::before {
+    content: '\2194';
+    color: var(--primary);
+    font-weight: bold;
+}
+
+/* Labels */
+.comp-label {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 4px 12px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 600;
+    pointer-events: none;
+    z-index: 5;
+}
+
+.label-before {
+    left: 20px;
+    z-index: 10;
+    /* Ensure on top of overlay */
+}
+
+.label-after {
+    right: 20px;
 }
 
 .customer-gallery {
@@ -1646,11 +1736,20 @@ h6 {
 }
 
 .cta-zalo {
-    background: #0068FF;
+    background: #ffffff;
+    border: 1px solid #0068FF;
+}
+
+.cta-messenger {
+    background: #ffffff;
+    border: 1px solid #00B2FF;
+    animation: ctaPulse 2s infinite;
 }
 
 .cta-phone {
-    background: #DD3333;
+    background: var(--secondary);
+    /* Green Emerald */
+    border: 2px solid white;
     animation: ctaPulse 2s infinite;
 }
 
